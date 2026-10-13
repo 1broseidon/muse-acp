@@ -108,6 +108,15 @@ whose wire shapes come from a live `muse serve`. `tests/live.rs` runs the
 built binary in front of a real `muse serve --provider echo`, which needs no
 account or network, and skips itself when `muse` is not installed.
 
+## Release
+
+Set the version in `Cargo.toml`, then push a matching tag (`v0.2.0` for
+`0.2.0`). The release workflow checks, tests and builds an archive for each
+platform the ACP registry lists (macOS, Linux and Windows, on x86_64 and
+aarch64), and publishes them as one GitHub release with their checksums. The
+run's summary includes the `distribution.binary` block for the ACP registry
+entry. A manual run of the workflow builds the archives without releasing.
+
 ## License
 
 MIT or Apache-2.0, at your option.
